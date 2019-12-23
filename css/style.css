@@ -1,12 +1,110 @@
+html {
+    overflow: hidden;
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-body {
+.background {
+    display: none;
+    height: 100%;
+    width: 100%;
     background-color: white;
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
 }
+
+.background-right {
+    animation-name: left-to-right-background;
+    animation-duration: 2s;
+}
+
+.background-left {
+    animation-name: right-to-left-background;
+    animation-duration: 2s;
+}
+
+.overlay-right {
+    animation-name: left-to-right-overlay;
+    animation-duration: 2s;
+}
+
+.overlay-left {
+    animation-name: right-to-left-overlay;
+    animation-duration: 2s;
+}
+
+.container {
+    animation-name: bounce;
+    animation-duration: 1s;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+}
+
+@keyframes left-to-right-background {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-to-left-background {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes left-to-right-overlay {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-to-left-overlay {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-100%);
+    }
+  
+    70% {
+        transform: translateY(30px);
+      }
+    
+      90% {
+        transform: translateY(-10px);
+      }
+    
+      100% {
+        transform: translateY(0);
+      }
+    }
